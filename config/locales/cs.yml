@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Přidat Video
+            reorder: Řadit Videos
+            reorder_done: Konec řazení Videos
+          records:
+            title: Videos
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Videos. Zvolte "Přidat Video" pro přidání prvního video.
+          video:
+            view_live_html: Zobrazit náhled video<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit video
+            delete: Smazat video
+      videos:
+        show:
+          other: Další Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

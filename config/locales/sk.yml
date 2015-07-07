@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Pridať Video
+            reorder: Preusporiadať Videos
+            reorder_done: Koniec radenia Videos
+          records:
+            title: Videos
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Videos. Kliknite na "Pridať Video" pre pridanie prvého video.
+          video:
+            view_live_html: Zobraziť náhľad video<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť video
+            delete: Zmazať video
+      videos:
+        show:
+          other: Daľšie Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

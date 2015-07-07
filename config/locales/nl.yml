@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Nieuwe Video toevoegen
+            reorder: De volgorde van de Videos wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Video-volgorde
+          records:
+            title: Videos
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Videos. Druk op 'Nieuwe Video toevoegen' om de eerste toe te voegen.
+          video:
+            view_live_html: Deze video op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze video
+            delete: Deze video definitief verwijderen
+      videos:
+        show:
+          other: Andere Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

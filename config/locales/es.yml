@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+#        article: masculino/femenino
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Crear nuevo video
+            reorder: Reordenar videos
+            reorder_done: Reordenación de videos completada
+          records:
+            title: Videos
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay videos todavía. Pulsa en "Crear nuevo Video" para crear tu primer video.
+          video:
+            view_live_html: Ver este video como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este video
+            delete: Borrar este video para siempre
+      videos:
+        show:
+          other: Otros videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

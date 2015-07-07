@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      videos:
+        title: Vidéos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Créer une nouvelle vidéo
+            reorder: Réordonner les vidéos
+            reorder_done: Fin de réordonnancement des vidéos
+          records:
+            title: Vidéos
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucune Video. Cliquer sur "Créer une nouvelle vidéo" pour créer votre première vidéo.'
+          video:
+            view_live_html: Voir cette vidéo <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier cette vidéo
+            delete: Supprimer définitivement cette vidéo
+            draft: brouillon
+          form:
+            video_key_help: 'La clé d''une vidéo Youtube peut se trouver dans son adresse web à la place des chiffres "123" : https://www.youtube.com/watch?v=123'
+      videos:
+        show:
+          other: Autres vidéos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Titre
+        video_key: Clé de la vidéo
+        draft: Enregistrer comme un brouillon

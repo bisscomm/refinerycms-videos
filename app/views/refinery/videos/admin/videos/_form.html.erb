@@ -1,0 +1,26 @@
+<%= form_for [refinery, :videos_admin, @video] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @video,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :video_key -%>
+    <%= f.text_field :video_key -%>
+    <%= refinery_help_tag t('.video_key_help') %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :draft -%>
+    <%= f.check_box :draft -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.videos.admin.videos.video'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @video.title) -%>
+<% end -%>

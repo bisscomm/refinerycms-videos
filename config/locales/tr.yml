@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Yeni Ekle Video
+            reorder: Tekrar sirala Videos
+            reorder_done: Tekrar siralama tamamlandiVideos
+          records:
+            title: Videos
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Videos yok henuz.  Tikla "Yeni Ekle Video" eklemek senin ilk video.
+          video:
+            view_live_html: Bunu canlu video goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle video
+            delete: Bunu Sil video sonsuza dek
+      videos:
+        show:
+          other: Diger Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

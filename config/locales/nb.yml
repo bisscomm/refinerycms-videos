@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Lag en ny Video
+            reorder: Endre rekkefølgen på Videos
+            reorder_done: Ferdig å endre rekkefølgen Videos
+          records:
+            title: Videos
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Videos enda. Klikk på "Lag en ny Video" for å legge til din første video.
+          video:
+            view_live_html: Vis hvordan denne video ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne video
+            delete: Fjern denne video permanent
+      videos:
+        show:
+          other: Andre Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft

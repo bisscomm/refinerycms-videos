@@ -1,0 +1,54 @@
+<% content_for :body do %>
+  <ul class="small-block-grid-1 medium-block-grid-3 blocks">
+    <% @videos.each_with_index do |video, index| %>
+      <li>
+        <%= link_to "##{index}", :data => { 'reveal-id' => "videoModal#{index}"} do %>
+
+
+
+          <div class="block">
+            <%= image_tag "http://img.youtube.com/vi/#{video.video_key}/0.jpg", :alt => video.title %>
+
+            <span class="icon"></span>
+
+
+          </div>
+          <%= video.title %>
+        <% end %>
+
+        <%= content_tag :div, :id => "videoModal#{index}", :class => 'reveal-modal full', :data => { 'reveal' => '' } do %>
+          <div class="row">
+            <div class="small-12 columns">
+              <h2><%= video.title %></h2>
+              <div class="flex-video">
+                <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/<%= video.video_key %>?controls=0&modestbranding=1&rel=0&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <a class="close-reveal-modal">&#215;</a>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/refinery/shared/main_banner" %>
+
+<div class="outer-row">
+  <div class="row">
+    <div class="large-12 columns">
+      <%= render :partial => "/refinery/shared/main_menu" %>
+    </div>
+  </div>
+</div>
+
+<div class="outer-row">
+  <div class="row">
+    <div class="large-12 columns" >
+      <section id="main-content" role="main">
+        <%= raw @page.content_for(:body) %>
+        <%= render '/refinery/content_page' %>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      videos:
+        title: Videos
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Aggiungi Nuovo Video
+            reorder: Riordina Videos
+            reorder_done: Termina il Riordino di Videos
+          records:
+            title: Videos
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Videos. Clicca "Aggiungi Nuovo Video" per aggiungere il tuo primo video.
+          video:
+            view_live_html: Guarda live questo video <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo video
+            delete: Rimuovi per sempre questo video
+      videos:
+        show:
+          other: Altri Videos
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Title
+        video_key: Video Key
+        draft: Draft
