@@ -1,5 +1,10 @@
 module Refinery
   class VideosGenerator < Rails::Generators::Base
+    source_root File.expand_path('../templates', __FILE__)
+
+    def generate_videos_initializer
+      template 'config/initializers/refinery/videos.rb.erb', File.join(destination_root, 'config', 'initializers', 'refinery', 'videos.rb')
+    end
 
     def rake_db
       rake "refinery_videos:install:migrations"

@@ -2,7 +2,24 @@
   <span class='title'>
     <%= video.title %>
     <% if video.draft? %><span class="label notice"><%= t('.draft')%></span><% end %>
+    <span class='title'>
+      <% if Refinery::I18n.frontend_locales.many? %>
+        <span class='locales'>
+          <% video.translations.sort_by{ |t| Refinery::I18n.frontend_locales.index(t.locale)}.each do |translation| %>
+            <% if translation.title.present? %>
+              <%= link_to refinery.edit_videos_admin_video_path(video, :switch_locale => translation.locale), :class => 'locale', title: translation.locale.upcase do %>
+
+                <div class="<%=translation.locale %> locale_marker">
+                  <%= locale_text_icon(translation.locale.upcase) %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </span>
+      <% end %>
+    </span>
   </span>
+
   <span class='actions'>
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_videos_admin_video_path(video),
          :title => t('.edit') %>

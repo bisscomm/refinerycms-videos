@@ -2,7 +2,25 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'refinerycms', '~> 2.1.0'
+git 'git://github.com/refinery/refinerycms.git', :branch => 'master' do
+  gem 'refinerycms'
+
+  group :development, :test do
+    gem 'refinerycms-testing'
+  end
+end
+
+gem 'refinerycms-page-images',
+  git: 'https://github.com/refinery/refinerycms-page-images',
+  branch: 'master'
+
+gem 'refinerycms-i18n',
+  git: 'https://github.com/refinery/refinerycms-i18n',
+  branch: 'master'
+
+gem 'refinerycms-wymeditor',
+  git: 'https://github.com/parndt/refinerycms-wymeditor',
+  branch: 'master'
 
 # Database Configuration
 platforms :jruby do
@@ -19,8 +37,6 @@ platforms :ruby do
 end
 
 group :development, :test do
-  gem 'refinerycms-testing', '~> 2.1.0'
-
   platforms :ruby do
     require 'rbconfig'
     if RbConfig::CONFIG['target_os'] =~ /linux/i

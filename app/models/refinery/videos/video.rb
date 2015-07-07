@@ -3,11 +3,11 @@ module Refinery
     class Video < Refinery::Core::BaseModel
       self.table_name = 'refinery_videos'
 
-      attr_accessible :title, :video_key, :draft, :position
+      translates :title, :video_key
 
-      validates :title, :presence => true, :uniqueness => true
+      validates :title, presence: true, uniqueness: true
 
-      scope :published, -> { where :draft => false }
+      scope :published, -> { where draft: false }
     end
   end
 end

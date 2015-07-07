@@ -1,17 +1,12 @@
+::Refinery::User.all.each do |user|
+  user.plugins.where(:name => 'refinery-videos').first_or_create!
+end if defined?(::Refinery::User)
+
 Refinery::I18n.frontend_locales.each do |lang|
   I18n.locale = lang
+  url = Refinery::Videos.videos_path
 
-  if defined?(Refinery::User)
-    Refinery::User.all.each do |user|
-      if user.plugins.where(:name => 'refinerycms-videos').blank?
-        user.plugins.create(:name => 'refinerycms-videos',
-                            :position => (user.plugins.maximum(:position) || -1) +1)
-      end
-    end
-  end
-
-  url = "/videos"
-  if defined?(Refinery::Page) && Refinery::Page.where(:link_url => url).empty?
+  if defined?(Refinery::Page) && Refinery::Page.where(link_url: url).empty?
     page = Refinery::Page.create(
       :title => 'Videos',
       :link_url => url,

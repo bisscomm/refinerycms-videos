@@ -1,10 +1,11 @@
 require 'refinerycms-core'
 
 module Refinery
-  autoload :VideosGenerator, 'generators/refinery/videos_generator'
+  autoload :VideosGenerator, 'generators/refinery/videos/videos_generator'
 
   module Videos
     require 'refinery/videos/engine'
+    require 'refinery/videos/configuration'
 
     class << self
       attr_writer :root

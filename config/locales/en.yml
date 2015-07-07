@@ -18,6 +18,9 @@ en:
             view_live_html: View this video live <br/><em>(opens in a new window)</em>
             edit: Edit this video
             delete: Remove this video forever
+            draft: Draft
+          form:
+            video_key_help: 'You can find the Youtube video key in his URL, like "123" : https://www.youtube.com/watch?v=123'
       videos:
         show:
           other: Other Videos

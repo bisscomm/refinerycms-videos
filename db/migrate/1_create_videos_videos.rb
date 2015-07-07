@@ -18,7 +18,7 @@ class CreateVideosVideos < ActiveRecord::Migration
     end
 
     if defined?(::Refinery::Page)
-      ::Refinery::Page.delete_all({:link_url => "/videos/videos"})
+      ::Refinery::Page.delete_all({:link_url => Refinery::Videos.videos_path})
     end
 
     drop_table :refinery_videos
