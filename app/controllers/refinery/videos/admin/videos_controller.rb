@@ -5,8 +5,7 @@ module Refinery
 
         crudify :'refinery/videos/video',
               :order => "position ASC",
-              :include => [:translations],
-              :xhr_paging => true
+              :include => [:translations]
 
         private
           def video_params
