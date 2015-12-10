@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Videos
-    describe Video do
+    describe Video, type: :model do
       describe "validations" do
         subject do
           FactoryGirl.create(:video,

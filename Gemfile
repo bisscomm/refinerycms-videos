@@ -44,6 +44,17 @@ group :test do
   gem "launchy"
 end
 
+group :development, :test do
+  gem 'rspec-its' # for the model's validation tests.
+  gem 'selenium-webdriver'
+  platforms :ruby do
+    require 'rbconfig'
+    if RbConfig::CONFIG['target_os'] =~ /linux/i
+      gem 'therubyracer', '~> 0.11.4'
+    end
+  end
+end
+
 # Load local gems according to Refinery developer preference.
 if File.exist? local_gemfile = File.expand_path("../.gemfile", __FILE__)
   eval File.read(local_gemfile)
