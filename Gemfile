@@ -1,54 +1,50 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gemspec
 
-git 'git://github.com/refinery/refinerycms.git', :branch => 'master' do
-  gem 'refinerycms'
+git "https://github.com/refinery/refinerycms", branch: "master" do
+  gem "refinerycms"
 
-  group :development, :test do
-    gem 'refinerycms-testing'
+  group :test do
+    gem "refinerycms-testing"
   end
 end
-
-gem 'refinerycms-page-images',
-  git: 'https://github.com/refinery/refinerycms-page-images',
-  branch: 'master'
-
-gem 'refinerycms-i18n',
-  git: 'https://github.com/refinery/refinerycms-i18n',
-  branch: 'master'
-
-gem 'refinerycms-wymeditor',
-  git: 'https://github.com/parndt/refinerycms-wymeditor',
-  branch: 'master'
 
 # Database Configuration
-platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'activerecord-jdbcmysql-adapter'
-  gem 'activerecord-jdbcpostgresql-adapter'
-  gem 'jruby-openssl'
+unless ENV["TRAVIS"]
+  gem "activerecord-jdbcsqlite3-adapter", :platform => :jruby
+  gem "sqlite3", :platform => :ruby
 end
 
-platforms :ruby do
-  gem 'sqlite3'
-  gem 'mysql2'
-  gem 'pg'
+# if !ENV["TRAVIS"] || ENV["DB"] == "mysql"
+#   gem "activerecord-jdbcmysql-adapter", :platform => :jruby
+#   gem "jdbc-mysql", "= 5.1.13", :platform => :jruby
+#   gem "mysql2", :platform => :ruby
+# end
+
+if !ENV["TRAVIS"] || ENV["DB"] == "postgresql"
+  gem "activerecord-jdbcpostgresql-adapter", :platform => :jruby
+  gem "pg", :platform => :ruby
 end
 
-group :development, :test do
-  platforms :ruby do
-    require 'rbconfig'
-    if RbConfig::CONFIG['target_os'] =~ /linux/i
-      gem 'therubyracer', '~> 0.11.4'
-    end
-  end
-end
+gem "jruby-openssl", :platform => :jruby
 
-# Gems used only for assets and not required
-# in production environments by default.
+# Refinery/rails should pull in the proper versions of these
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
+end
+
+group :development do
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem "launchy"
+end
+
+# Load local gems according to Refinery developer preference.
+if File.exist? local_gemfile = File.expand_path("../.gemfile", __FILE__)
+  eval File.read(local_gemfile)
 end

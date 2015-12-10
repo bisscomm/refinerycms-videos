@@ -90,3 +90,7 @@ Gemfile.lock
 # Local Gemfile for developing without sharing dependencies
 .gemfile
 *.txt
+
+.gems
+.ruby-version
+.rbenv-gemsets

@@ -1,6 +1,6 @@
 # Refinery CMS Videos
 
-[![Build Status](https://travis-ci.org/bisscomm/refinerycms-videos.svg?branch=master)](https://travis-ci.org/refinery/refinerycms) [![Code Climate](https://codeclimate.com/github/bisscomm/refinerycms-videos/badges/gpa.svg)](https://codeclimate.com/github/bisscomm/refinerycms-videos) [![Test Coverage](https://codeclimate.com/github/bisscomm/refinerycms-videos/badges/coverage.svg)](https://codeclimate.com/github/bisscomm/refinerycms-videos/coverage)
+[![Build Status](https://travis-ci.org/bisscomm/refinerycms-videos.svg?branch=master)](https://travis-ci.org/bisscomm/refinerycms-videos) [![Code Climate](https://codeclimate.com/github/bisscomm/refinerycms-videos/badges/gpa.svg)](https://codeclimate.com/github/bisscomm/refinerycms-videos) [![Test Coverage](https://codeclimate.com/github/bisscomm/refinerycms-videos/badges/coverage.svg)](https://codeclimate.com/github/bisscomm/refinerycms-videos/coverage)
 
 Videos engine for [Refinery CMS](http://refinerycms.com) allows you to display translated videos.
 
