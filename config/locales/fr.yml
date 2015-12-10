@@ -1,7 +1,7 @@
 fr:
   refinery:
     plugins:
-      videos:
+      refinery_videos:
         title: Vidéos
     videos:
       admin:

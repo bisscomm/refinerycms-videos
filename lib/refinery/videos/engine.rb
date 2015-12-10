@@ -8,7 +8,7 @@ module Refinery
 
       before_inclusion do
         Refinery::Plugin.register do |plugin|
-          plugin.name = "videos"
+          plugin.name = "refinery_videos"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.videos_admin_videos_path }
           plugin.pathname = root
         end

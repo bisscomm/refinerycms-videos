@@ -1,7 +1,7 @@
 es:
   refinery:
     plugins:
-      videos:
+      refinery_videos:
         title: Videos
 #        article: masculino/femenino
     videos:
