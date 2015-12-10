@@ -10,6 +10,7 @@ module Refinery
         Refinery::Plugin.register do |plugin|
           plugin.name = "refinery_videos"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.videos_admin_videos_path }
+          plugin.menu_match = %r{refinery/(videos)(/.+?)?$}
           plugin.pathname = root
         end
       end
