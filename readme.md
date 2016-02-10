@@ -9,7 +9,7 @@ Videos engine for [Refinery CMS](http://refinerycms.com) allows you to display t
 
 ## Requirements
 
-This version of `refinerycms-videos` supports Refinery 3.x and Rails 4.1.x.
+This version of `refinerycms-videos` supports Refinery 3.x and Rails 4.1+.
 
 * [Refinery CMS](http://refinerycms.com) version 3.0.0 or above.
 
