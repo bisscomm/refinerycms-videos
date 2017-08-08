@@ -14,7 +14,7 @@ module Refinery
     protected
 
       def find_all_videos
-        @videos = Video.order('position ASC')
+        @videos = Video.published.order('position ASC')
       end
 
       def find_page
