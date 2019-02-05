@@ -1,0 +1,32 @@
+ru:
+  refinery:
+    plugins:
+      refinery_videos:
+        title: Видео
+    videos:
+      admin:
+        videos:
+          actions:
+            create_new: Добавить новое Видео
+            reorder: Упорядочить Видео
+            reorder_done: Закончить упорядочивать Видео
+          records:
+            title: Видео
+            sorry_no_results: Видео не найдены
+            no_items_yet: В базе данных еще нет видео. Нажмите "Добавить новое Видео" чтобы загрузить.
+          video:
+            view_live_html: Посмотреть это видео <br/><em>(откроется в новом окне)</em>
+            edit: Отредактировать это Видео
+            delete: Удалить это Видео навсегда
+            draft: Черновик
+          form:
+            video_key_help: 'Вы можете найти ключ видео Youtube в его адресе, например, здесь это "123" : https://www.youtube.com/watch?v=123'
+      videos:
+        show:
+          other: Другие Видео
+  activerecord:
+    attributes:
+      'refinery/videos/video':
+        title: Заголовок
+        video_key: Ключ
+        draft: Черновик
